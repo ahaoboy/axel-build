@@ -55,6 +55,7 @@ jobs:
           ./configure
           make
           sudo make install
+          cd ..
 
           git clone https://github.com/axel-download-accelerator/axel
 
@@ -77,13 +78,13 @@ jobs:
 
           cd ..
           tar -czf ./axel-${{ matrix.target }}.tar.gz -C ./dist .
-          ls -l ./axel-${{ matrix.target }}.tar.gz
+          ls -l axel-${{ matrix.target }}.tar.gz
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: axel-${{ matrix.target }}
-          path: ./axel-${{ matrix.target }}.tar.gz
+          path: axel-${{ matrix.target }}.tar.gz
   release:
     needs: build
     runs-on: ubuntu-latest
