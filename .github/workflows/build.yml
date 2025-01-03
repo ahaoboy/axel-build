@@ -50,7 +50,7 @@ jobs:
           sudo apt-get install autoconf autoconf-archive gettext gettext-base autopoint build-essential libc6-dev txt2man -y
 
           wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.gz
-          tar -xzf autoconf-latest.tar.gz
+          tar -xzf autoconf-2.72.tar.gz
           cd autoconf-2.72
           ./configure
           make
