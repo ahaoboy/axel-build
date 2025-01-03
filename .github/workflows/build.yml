@@ -60,6 +60,11 @@ jobs:
 
           cd axel
 
+          # add fix
+          git remote add upstream https://github.com/satk0/axel.git
+          git fetch upstream
+          git cherry-pick 17ba650aaef211471cd6ed9576a75fd6e0b9e682
+
           autoreconf -i
           ./configure
           make
