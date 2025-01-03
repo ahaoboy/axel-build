@@ -37,7 +37,7 @@ jobs:
           # - target: x86_64-unknown-linux-musl
           #   os: ubuntu-latest
           - target: x86_64-unknown-linux-gnu
-            os: ubuntu-latest
+            os: ubuntu-2404
     runs-on: ${{ matrix.os }}
     name: build-${{ matrix.target }}
     steps:
@@ -46,6 +46,7 @@ jobs:
         if: matrix.os != 'windows-latest'
         shell: "bash"
         run: |
+          sudo apt update -y
           sudo apt-get install autoconf autoconf-archive gettext gettext-base autopoint build-essential libc6-dev txt2man -y
           git clone https://github.com/axel-download-accelerator/axel
 
