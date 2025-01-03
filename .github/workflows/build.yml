@@ -61,6 +61,8 @@ jobs:
           cd axel
 
           # add fix
+          git config --global user.email "you@example.com"
+          git config --global user.name "ahaoboy"
           git remote add upstream https://github.com/satk0/axel.git
           git fetch upstream
           git cherry-pick 17ba650aaef211471cd6ed9576a75fd6e0b9e682
