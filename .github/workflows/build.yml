@@ -48,6 +48,14 @@ jobs:
         run: |
           sudo apt update -y
           sudo apt-get install autoconf autoconf-archive gettext gettext-base autopoint build-essential libc6-dev txt2man -y
+
+          wget http://ftp.gnu.org/gnu/autoconf/autoconf-latest.tar.gz
+          tar -xzf autoconf-latest.tar.gz
+          cd autoconf-*
+          ./configure
+          make
+          sudo make install
+
           git clone https://github.com/axel-download-accelerator/axel
 
           cd axel
